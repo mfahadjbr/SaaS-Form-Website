@@ -19,7 +19,7 @@ const planSelectionSchema = z.object({
 
 type PlanSelectionData = z.infer<typeof planSelectionSchema>
 
-export function PlanSelectionStep({ onNext, data }: StepProps) {
+export function PlanSelectionStep({ onNext, data }: { onNext: (data: Record<string, unknown>) => void; data?: Record<string, unknown> }) {
   const form = useForm<PlanSelectionData>({
     resolver: zodResolver(planSelectionSchema),
     defaultValues: data,

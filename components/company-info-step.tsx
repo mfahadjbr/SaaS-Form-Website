@@ -10,7 +10,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form"
-import { Button } from "@/components/ui/button"
+
 import { StepProps } from './onboarding-wizard'
 
 const companyInfoSchema = z.object({
@@ -21,7 +21,7 @@ const companyInfoSchema = z.object({
 
 type CompanyInfoData = z.infer<typeof companyInfoSchema>
 
-export function CompanyInfoStep({ onNext, onPrevious, data }: StepProps) {
+export function CompanyInfoStep({ onNext, data }: StepProps) {
   const form = useForm<CompanyInfoData>({
     resolver: zodResolver(companyInfoSchema),
     defaultValues: data,

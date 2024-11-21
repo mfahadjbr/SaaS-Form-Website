@@ -1,9 +1,7 @@
-import { useState } from 'react'
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import {
   Form,
   FormControl,
@@ -20,6 +18,8 @@ const personalInfoSchema = z.object({
 })
 
 type PersonalInfoData = z.infer<typeof personalInfoSchema>
+
+import { StepProps } from './onboarding-wizard'
 
 export function PersonalInfoStep({ onNext, data }: StepProps) {
   const form = useForm<PersonalInfoData>({
